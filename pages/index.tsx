@@ -4,8 +4,10 @@ import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { MainLayout } from '@/components/layout';
+import { NextPageWithLayout } from '@/models';
 
-export default function Home() {
+const Home : NextPageWithLayout = () => {
   const router = useRouter();
   function goToDetailPage() {
     router.push({
@@ -17,7 +19,7 @@ export default function Home() {
     });
   }
   return (
-    <>
+    <div>
       <Head>
         <title>My Next App By SyPham</title>
         <meta name="description" content="Learn NextJs  + Typescript with fun" />
@@ -32,6 +34,8 @@ export default function Home() {
           <p>Go to About</p>
         </Link>
       </main>
-    </>
+    </div>
   );
 }
+Home.Layout = MainLayout
+export default Home
