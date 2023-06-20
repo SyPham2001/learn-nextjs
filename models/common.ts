@@ -6,9 +6,9 @@ export interface LayoutProps{
     children : ReactNode
 }
 
-export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
-    Layout?: (props: LayoutProps) => ReactNode
-  }
+export type NextPageWithLayout = NextPage & {
+	Layout?: (props: LayoutProps) => ReactElement
+}
    
  export type AppPropsWithLayout = AppProps & {
     Component: NextPageWithLayout
